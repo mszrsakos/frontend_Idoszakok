@@ -39,31 +39,32 @@ let honapok = [
     { honap: "November", evszak: "Ősz", napokSzama: 30 },
     { honap: "December", evszak: "Tél", napokSzama: 31 }
 ];
-
-let Honapkereses = () => {
+function Honapkereses(honapIn) {
+    return honapok[honapIn - 1];
+};
+let Start = () => {
     try {
         let honapIn = Number(document.getElementById("honapIn").value);
         if (isNaN(honapIn)) {
             throw new Error("Nem számot adtál meg!");
-        }
 
-        honapIn = Number(honapIn);
+        }
+        
+        
 
         if (honapIn < 1 || honapIn > 12) {
             throw new Error("A hónapszámnak 1 és 12 közé kell esnie!");
         }
-
-        let honap = honapok[honapIn - 1];
-
-        console.log("Hónap:", honap.honap);
-        console.log("Évszak:", honap.evszak);
-        console.log("Napok száma:", honap.napokSzama);
+        adatok=Honapkereses(honapIn)
+        console.log("Hónap:", adatok.honap);
+        console.log("Évszak:", adatok.evszak);
+        console.log("Napok száma:", adatok.napokSzama);
 
     } catch (error) {
         console.error("Hiba:", error.message);
     }
+    
 };
 
-Honapkereses(honapIn);
 
 
