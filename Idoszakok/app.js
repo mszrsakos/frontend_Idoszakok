@@ -18,71 +18,23 @@ Példa 2
 Adj meg egy hónapszámot (1-12): 15 Hiba: A hónapszámnak 1 és 12 közé kell esnie!
 Példa 3
 Adj meg egy hónapszámot (1-12): alma Hiba: Nem számot adtál meg!
-
-
 */
 
-function vegeredmeny(){
-    let honap
-    let evszak
-    let honapIn= document.getElementById("honapIn");
-    let honapBtn= document.getElementById("honapBtn");
-    let eredmenyHon=document.getElementById("eredmenyHon");
-    let eredmenyEvsz=document.getElementById("eredmenyEvsz");
-    let clear=document.getElementById("clear");
-    switch(Number(honapIn.value)){
-        case 1:
-            honap="Január"
-            evszak="Tél"
-            break
-        case 2:
-            honap="Február"
-            evszak="Tél"
-            break
-        case 3:
-            honap="Március"
-            evszak="Tavasz"
-            break
-        case 4:
-            honap="Április"
-            evszak="Tavasz"
-            break
-        case 5:
-            honap="Május"
-            evszak="Tavasz"
-            break
-        case 6:
-            honap="Június"
-            evszak="Tavasz"
-            break
-        case 7:
-            honap="Július"
-            evszak="Nyár"
-            break
-        case 8:
-            honap="Augusztus"
-            evszak="Nyár"
-            break
-        case 9:
-            honap="Szeptember"
-            evszak="Ősz"
-            break
-        case 10:
-            honap="Október"
-            evszak="Ősz"
-            break
-        case 11:
-            honap="November"
-            evszak="Ősz"
-            break
-        case 12:
-            honap="December"
-            evszak="Tél"
-            break
-        default:
-            honap="Ismeretlen"
-            evszak="Ismeretlen"
-    }
-    eredmenyHon.innerText=honap
-    eredmenyEvsz.innerText=evszak
-}
+//1. feladatresz
+const honapok=[
+    {szam:1,honap:"Január",evszak:"Tél",napokSzama:31},
+    {szam:2,honap:"Február",evszak:"Tél",napokSzama:28},
+    {szam:3,honap:"Március",evszak:"Tavasz",napokSzama:31},
+    {szam:4,honap:"Április",evszak:"Tavasz",napokSzama:30},
+    {szam:5,honap:"Május",evszak:"Tavasz",napokSzama:31},
+    {szam:6,honap:"Június",evszak:"Tavasz",napokSzama:30},
+    {szam:7,honap:"Július",evszak:"Nyár",napokSzama:31},
+    {szam:8,honap:"Augusztus",evszak:"Nyár",napokSzama:31},
+    {szam:9,honap:"Szeptember",evszak:"Ősz",napokSzama:30},
+    {szam:10,honap:"Október",evszak:"Ősz",napokSzama:31},
+    {szam:11,honap:"November",evszak:"Ősz",napokSzama:30},
+    {szam:12,honap:"December",evszak:"Tél",napokSzama:31}
+]
+
+
+
