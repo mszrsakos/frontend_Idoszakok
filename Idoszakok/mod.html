@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módosítás</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <label for="honapIn">Adj meg egy hónapszámot (1-12):</label>
+    <input id="honapIn" type="text" placeholder="pl. 4">
+    <button type="button" onclick="Start()">Keresés</button>
+    <button type="button" onclick="location.href='index.html'">Vissza</button>
+    <p id="eredmeny"></p>
+
+    <hr>
+
+    <p id="modHonapTxt">Melyik hónaphoz (1-12) szeretnél új ünnepet beállítani?</p>
+    <input id="modHonapIn" type="text" placeholder="pl. 5">
+    
+    <p id="unnepTxt">Add meg az új ünnep nevét:</p>
+    <input id="ujUnnep" type="text" placeholder="pl. Anyák napja">
+    
+    <button id="modositas" onclick="modStart()" type="button">Módosítás</button>
+    <p id="kiIras"></p>
+
+    <script src="mod.js"></script>
+</body>
+</html>

@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <input id="honapIn" type="text">
-        <button onclick="Start()">Keresés</button>
+    <label for="honapIn">Adj meg egy hónapszámot (1-12):</label>
+    <input id="honapIn" type="text" placeholder="pl. 4">
+    <button type="button" onclick="Start()">Keresés</button>
+    <button type="button" onclick="location.href='mod.html'">Módosítás</button>
+    <p id="eredmeny"></p>
 
     <script src="app.js"></script>
 </body>

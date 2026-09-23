@@ -26,45 +26,52 @@ Adj meg egy hónapszámot (1-12): alma Hiba: Nem számot adtál meg!
 
 
 let honapok = [
-    { honap: "Január", evszak: "Tél", napokSzama: 31 },
-    { honap: "Február", evszak: "Tél", napokSzama: 28 },
-    { honap: "Március", evszak: "Tavasz", napokSzama: 31 },
-    { honap: "Április", evszak: "Tavasz", napokSzama: 30 },
-    { honap: "Május", evszak: "Tavasz", napokSzama: 31 },
-    { honap: "Június", evszak: "Nyár", napokSzama: 30 },
-    { honap: "Július", evszak: "Nyár", napokSzama: 31 },
-    { honap: "Augusztus", evszak: "Nyár", napokSzama: 31 },
-    { honap: "Szeptember", evszak: "Ősz", napokSzama: 30 },
-    { honap: "Október", evszak: "Ősz", napokSzama: 31 },
-    { honap: "November", evszak: "Ősz", napokSzama: 30 },
-    { honap: "December", evszak: "Tél", napokSzama: 31 }
+    { honap: "Január", evszak: "Tél", napokSzama: 31, unnep:"Nincs ünnep"},
+    { honap: "Február", evszak: "Tél", napokSzama: 28, unnep:"Valentinnap" },
+    { honap: "Március", evszak: "Tavasz", napokSzama: 31,unnep:"Nőnap" },
+    { honap: "Április", evszak: "Tavasz", napokSzama: 30, unnep:"Húsvét" },
+    { honap: "Május", evszak: "Tavasz", napokSzama: 31, unnep:"Nincs ünnep" },
+    { honap: "Június", evszak: "Nyár", napokSzama: 30, unnep:"Nincs ünnep" },
+    { honap: "Július", evszak: "Nyár", napokSzama: 31, unnep:"Nincs ünnep" },
+    { honap: "Augusztus", evszak: "Nyár", napokSzama: 31, unnep:"Nincs ünnep" },
+    { honap: "Szeptember", evszak: "Ősz", napokSzama: 30, unnep:"Nincs ünnep" },
+    { honap: "Október", evszak: "Ősz", napokSzama: 31, unnep:"Halloween" },
+    { honap: "November", evszak: "Ősz", napokSzama: 30, unnep:"Nincs ünnep" },
+    { honap: "December", evszak: "Tél", napokSzama: 31, unnep:"Karácsony" }
 ];
 function Honapkereses(honapIn) {
     return honapok[honapIn - 1];
 };
 let Start = () => {
+    const eredmeny = document.getElementById("eredmeny");
+    const honapInput = document.getElementById("honapIn").value.trim();
+
     try {
-        let honapIn = Number(document.getElementById("honapIn").value);
-        if (isNaN(honapIn)) {
-            throw new Error("Nem számot adtál meg!");
-
+        if (honapInput === "") {
+            throw new Error("Nem lehet üres a mező!");
         }
-        
-        
 
-        if (honapIn < 1 || honapIn > 12) {
+        let honapIn = Number(honapInput);
+
+        if (isNaN(honapIn)) {
+            throw new Error("Nem adhatsz meg betűket!");
+        }
+
+        if (!Number.isInteger(honapIn) || honapIn < 1 || honapIn > 12) {
             throw new Error("A hónapszámnak 1 és 12 közé kell esnie!");
         }
-        adatok=Honapkereses(honapIn)
-        console.log("Hónap:", adatok.honap);
-        console.log("Évszak:", adatok.evszak);
-        console.log("Napok száma:", adatok.napokSzama);
+
+        const adatok = Honapkereses(honapIn);
+
+        eredmeny.textContent =
+            `Hónap: ${adatok.honap} | Évszak: ${adatok.evszak} | Napok száma: ${adatok.napokSzama}`;
 
     } catch (error) {
-        console.error("Hiba:", error.message);
+        eredmeny.textContent = `Hiba: ${error.message}`;
     }
-    
 };
+
+
 
 
 

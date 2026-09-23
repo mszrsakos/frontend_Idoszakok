@@ -1,0 +1,79 @@
+html {
+    background-color: rgb(180, 216, 204);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+label,
+input,
+button,
+p {
+    margin: 0;
+}
+
+button,
+input[type="button"] {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    display: block;
+}
+
+button:hover,
+input[type="button"]:hover {
+    background-color: rgb(220, 220, 220);
+}
+
+input[type="text"] {
+    border: 1px solid rgb(180, 216, 204);
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 12px;
+    display: block;
+    width: 220px;
+    max-width: 100%;
+}
+
+p {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(99, 99, 99);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    max-width: 90%;
+}
+label{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(99, 99, 99);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    max-width: 90%;
+}
+
+#clearBtn {
+    display: block;
+    margin: 0 auto;
+}
