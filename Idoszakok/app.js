@@ -56,7 +56,11 @@ let Start = () => {
         if (isNaN(honapIn)) {
             throw new Error("Nem adhatsz meg betűket!");
         }
+        const csakSzamRegex = /^\d+$/;
 
+        if (!csakSzamRegex.test(honapInput)) {
+            throw new Error("Nem adhatsz meg speciális karaktereket!");
+        }
         if (!Number.isInteger(honapIn) || honapIn < 1 || honapIn > 12) {
             throw new Error("A hónapszámnak 1 és 12 közé kell esnie!");
         }
